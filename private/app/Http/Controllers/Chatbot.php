@@ -37,8 +37,8 @@ class Chatbot extends Controller
         foreach ($allCommands as $index => $test) {
            $bulmaBody[$index]['Member'] = $test['word'];
            $bulmaBody[$index]['Text'] = $test['text'];
-           $bulmaBody[$index]['Edit'] = '<center><a href="\edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></center>';
-           $bulmaBody[$index]['Delete'] = '<center><a href="\edit"><i class="fa fa-times" aria-hidden="true"></i></a></center>';
+           $bulmaBody[$index]['E'] = '<center><a href="edit/'.$test['id'].'"><i class="fa fa-pencil" aria-hidden="true"></i></a></center>';
+           $bulmaBody[$index]['D'] = '<center><a href="delete/'.$test['id'].'"><i class="fa fa-times" aria-hidden="true"></i></a></center>';
 
         }
 
@@ -47,7 +47,7 @@ class Chatbot extends Controller
         $bulmaTable->title = "Group: ".$command['group_name'].": ".$command['description'];
         $bulmaTable->subtitle = $command['text'];
 
-        $bulmaTable->setHeader(["Member" => "Member", "Text" => "Text", "Edit" => "Edit", "Delete" => "Delete"]);
+        $bulmaTable->setHeader(["Member" => "Member", "Text" => "Text", "E" => "E", "D" => "D"]);
         
         $bulmaTable->setBody($bulmaBody);
 
@@ -201,6 +201,10 @@ class Chatbot extends Controller
             return $command;
     	} 
     	
+    }
+
+    public function edit($request) {
+        return 'edit this';
     }
 
     public function printer($multipleInput, $title = null) {

@@ -19,6 +19,10 @@ Route::get('/chat', function () {
     return view('chat');
 });
 
+Route::get('/chat2', function () {
+    return view('chat2');
+});
+
 Route::put('/button_click', function () {
     return "you did it!";
 });
@@ -31,26 +35,10 @@ Route::post('/button_click', function () {
     return "you did it!";
 });
 
+Route::post('/edit/{id}', 'Chatbot@edit');
+Route::get('/edit/{id}', 'Chatbot@edit');
+
 Route::post('/mouse_entered', 'Chatbot@userSendsMessage');
-	//echo "<pre>";
-	//print_r($request);
-	//echo "</pre>";
-
-    //$data['message'] = $message;
-    // $data['lastName'] = $lastName;
-
-    // if ($data['message'] == "Fred" ) {
-    // 	$data['output'] = "ah yes, fred";
-    // } else {
-    // 	$data['output'] = "this is not fred!";
-   	//e//cho 
-
-    // }
-// 
-
-
-   // return $request;
-//});
 
 Route::get('/mouse_entered', function () {
     return "you did it! mouse!";
