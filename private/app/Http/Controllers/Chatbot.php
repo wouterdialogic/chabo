@@ -39,7 +39,6 @@ class Chatbot extends Controller
            $bulmaBody[$index]['Text'] = $test['text'];
            $bulmaBody[$index]['E'] = '<center><a href="edit/'.$test['id'].'"><i class="fa fa-pencil" aria-hidden="true"></i></a></center>';
            $bulmaBody[$index]['D'] = '<center><a href="delete/'.$test['id'].'"><i class="fa fa-times" aria-hidden="true"></i></a></center>';
-
         }
 
         $bulmaTable = new BulmaTableSpitter;
